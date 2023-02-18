@@ -2,13 +2,13 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	"github.com/hertz-contrib/jwt"
 	"github.com/sakasikai/GoFive/cmd/api/handlers"
 	"github.com/sakasikai/GoFive/cmd/api/rpc"
+	gofive "github.com/sakasikai/GoFive/kitex_gen/GoFive"
 	"github.com/sakasikai/GoFive/pkg/constants"
 	"github.com/sakasikai/GoFive/pkg/errno"
 	"time"
@@ -46,12 +46,30 @@ func main() {
 			}
 		},
 		LoginResponse: func(ctx context.Context, c *app.RequestContext, code int, token string, expire time.Time) {
-			claims := jwt.ExtractClaims(ctx, c)
-			userID := int64(claims[constants.IdentityKey].(float64))
+			var loginVar handlers.UserParam
+			if err := c.Bind(&loginVar); err != nil {
+				c.JSON(consts.StatusOK, map[string]interface{}{
+					"status_code": errno.ParamErr.ErrCode,
+					"status_msg":  errno.ParamErr.ErrMsg,
+				})
+			}
+
+			if len(loginVar.UserName) == 0 || len(loginVar.PassWord) == 0 {
+				c.JSON(consts.StatusOK, map[string]interface{}{
+					"status_code": errno.ParamErr.ErrCode,
+					"status_msg":  errno.ParamErr.ErrMsg,
+				})
+			}
+
+			users, _ := rpc.QueryUsersByName(
+				context.Background(),
+				&gofive.QueryUserByNameRequest{UserName: loginVar.UserName},
+			)
+
 			c.JSON(consts.StatusOK, map[string]interface{}{
 				"status_code": errno.Success.ErrCode,
 				"status_msg":  errno.Success.ErrMsg,
-				"user_id":     userID,
+				"user_id":     users[0].User.Id,
 				"token":       token,
 			})
 		},
@@ -71,18 +89,16 @@ func main() {
 				return "", jwt.ErrMissingLoginValues
 			}
 
-			fmt.Println("Authenticator filter todo:", loginVar.UserName, loginVar.PassWord)
-			// pass all for test
-			// rpc.checkuser(password) <-> DB.password
-			return true, nil
+			return rpc.CheckUser(context.Background(), &gofive.CheckUserRequest{UserName: loginVar.UserName, Password: loginVar.PassWord})
 		},
 		TokenLookup:   "header: Authorization, query: token, cookie: jwt",
 		TokenHeadName: "Bearer",
 		TimeFunc:      time.Now,
 	})
 
+	// for token generation
 	handlers.SetAuthMiddleware(authMiddleware)
-	
+
 	// todo recovery
 
 	v := r.Group("/douyin")
@@ -94,7 +110,7 @@ func main() {
 	v.Use(authMiddleware.MiddlewareFunc())
 	{
 		//v.GET("/feed/")
-		v.POST("/user/", handlers.UserInfo)
+		v.GET("/user/", handlers.UserInfo)
 
 		//v.POST("/publish/action/")
 		//v.GET("/publish/list/")

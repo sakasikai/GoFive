@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"github.com/sakasikai/GoFive/cmd/user/pack"
 	"github.com/sakasikai/GoFive/cmd/user/service"
 	gofive "github.com/sakasikai/GoFive/kitex_gen/GoFive"
@@ -33,7 +32,7 @@ func (s *UserServiceImpl) QueryUserByID(ctx context.Context, req *gofive.QueryUs
 		FollowerCount: u.FollowerCount,
 		IsFollow:      u.IsFollow,
 	}
-	resp.BaseResp = pack.BaseResp(errno.Success)
+	resp.BaseResp = pack.BuildBaseResp(errno.Success)
 	return resp, nil
 }
 
@@ -48,14 +47,25 @@ func (s *UserServiceImpl) QueryUserByName(ctx context.Context, req *gofive.Query
 		FollowerCount: u.FollowerCount,
 		IsFollow:      u.IsFollow,
 	}
-	resp.BaseResp = pack.BaseResp(errno.Success)
+	resp.BaseResp = pack.BuildBaseResp(errno.Success)
 	return resp, nil
-	return
 }
 
 // CheckUser implements the UserServiceImpl interface.
 func (s *UserServiceImpl) CheckUser(ctx context.Context, req *gofive.CheckUserRequest) (resp *gofive.CheckUserResponse, err error) {
-	// TODO: Your code here...
-	fmt.Println("ok")
-	return
+	resp = new(gofive.CheckUserResponse)
+
+	if len(req.UserName) == 0 || len(req.Password) == 0 {
+		resp.BaseResp = pack.BuildBaseResp(errno.ParamErr)
+		return resp, nil
+	}
+
+	uid, err := service.NewCheckUserService(ctx).CheckUser(req)
+	if err != nil {
+		resp.BaseResp = pack.BuildBaseResp(err)
+		return resp, nil
+	}
+	resp.UserId = uid
+	resp.BaseResp = pack.BuildBaseResp(errno.Success)
+	return resp, nil
 }

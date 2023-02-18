@@ -38,11 +38,11 @@ struct QueryUserResponse {
 }
 
 //
-struct CheckUserResponse {
+struct CheckUserRequest {
     1:string user_name
     2:string password
 }
-struct CheckUserRequest {
+struct CheckUserResponse {
     1:i64 user_id
     2:BaseResp base_resp
 }

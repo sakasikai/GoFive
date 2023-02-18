@@ -64,3 +64,12 @@ func QueryUsersByName(ctx context.Context, req *gofive.QueryUserByNameRequest) (
 
 	return []*gofive.QueryUserResponse{resp}, nil
 }
+
+func CheckUser(ctx context.Context, req *gofive.CheckUserRequest) (int64, error) {
+	resp, err := userClient.CheckUser(ctx, req)
+	if err != nil {
+		return -1, err
+	}
+
+	return resp.UserId, nil
+}

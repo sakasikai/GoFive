@@ -25,7 +25,7 @@ type UserInfoResp struct {
 }
 
 // SendResponse pack response
-func SendLoginResponse(c *app.RequestContext, err error, userId int64, token string) {
+func SendRegisterResponse(c *app.RequestContext, err error, userId int64, token string) {
 	Err := errno.ConvertErr(err)
 	c.JSON(consts.StatusOK, LoginResp{
 		Code:    Err.ErrCode,
