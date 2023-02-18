@@ -81,6 +81,8 @@ func main() {
 		TimeFunc:      time.Now,
 	})
 
+	handlers.SetAuthMiddleware(authMiddleware)
+	
 	// todo recovery
 
 	v := r.Group("/douyin")
