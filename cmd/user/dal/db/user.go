@@ -37,7 +37,7 @@ func QueryUserByName(ctx context.Context, uname string) ([]*User, error) {
 func QueryUserByID(ctx context.Context, userID int64) ([]*User, error) {
 	users := make([]*User, 0)
 
-	if err := DB.WithContext(ctx).Where("id = ?", userID).Find(users).Error; err != nil {
+	if err := DB.WithContext(ctx).Where("id = ?", userID).Find(&users).Error; err != nil {
 		return nil, err
 	}
 

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b43c1d19-a3cb-4d23-9b49-88e40961f239" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GoFive.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GoFive.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/api/handlers/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/handlers/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/api/handlers/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/handlers/register.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/api/handlers/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/handlers/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/api/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/api/rpc/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/rpc/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user/dal/db/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user/dal/db/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user/output/bin/UserService" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/user/pack/resp.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user/pack/resp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idl/rpc/user.thrift" beforeDir="false" afterPath="$PROJECT_DIR$/idl/rpc/user.thrift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kitex.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kitex_gen/GoFive/k-user.go" beforeDir="false" afterPath="$PROJECT_DIR$/kitex_gen/GoFive/k-user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kitex_gen/GoFive/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/kitex_gen/GoFive/user.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2LtU9Xt6UNPo7tXByfmqs4kKt0O" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.format.on.save.advertiser.fired" value="true" />
+    <property name="go.formatter.settings.were.checked" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="GoFive" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="GoFive" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+</project>

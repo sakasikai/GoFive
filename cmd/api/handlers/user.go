@@ -11,23 +11,14 @@ import (
 )
 
 func UserInfo(ctx context.Context, c *app.RequestContext) {
-	//
 	claims := jwt.ExtractClaims(ctx, c)
 	userID := int64(claims[constants.IdentityKey].(float64))
 
-	var uidParam struct {
-		id int64 `json:"user_id"`
-	}
+	users, err := rpc.QueryUsersByID(context.Background(), &gofive.QueryUserByIDRequest{UserId: userID})
 
-	if err := c.Bind(&uidParam); err != nil {
+	if err != nil || len(users) == 0 {
 		SendUserInfoResponse(c, errno.ConvertErr(err), nil)
 	}
 
-	if uidParam.id != userID {
-		SendUserInfoResponse(c, errno.ParamErr, nil)
-	}
-
-	req := &gofive.QueryUserByIDRequest{UserId: userID}
-	users, err := rpc.QueryUsersByID(context.Background(), req)
-	SendUserInfoResponse(c, err, users)
+	SendUserInfoResponse(c, errno.ConvertErr(errno.Success), users[0].User)
 }
