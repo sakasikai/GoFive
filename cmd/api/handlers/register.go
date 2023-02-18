@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/hertz-contrib/jwt"
 	"github.com/sakasikai/GoFive/cmd/api/rpc"
 	gofive "github.com/sakasikai/GoFive/kitex_gen/GoFive"
 	"github.com/sakasikai/GoFive/pkg/errno"
@@ -46,5 +45,13 @@ func Register(ctx context.Context, c *app.RequestContext) {
 
 	response := resp[0]
 
-	SendLoginResponse(c, errno.Success, response.User.Id, jwt.GetToken(ctx, c))
+	//
+	token, _, err := jwtAuthMiddleware.TokenGenerator(response.User.Id)
+
+	if err != nil {
+		SendLoginResponse(c, errno.ConvertErr(err), -1, "nil")
+		return
+	}
+
+	SendLoginResponse(c, errno.Success, response.User.Id, token)
 }
