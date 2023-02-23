@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b43c1d19-a3cb-4d23-9b49-88e40961f239" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GoFive.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GoFive.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/api/handlers/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/handlers/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/api/handlers/register.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/handlers/register.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/api/handlers/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/handlers/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/api/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/api/rpc/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/api/rpc/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user/dal/db/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user/dal/db/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user/output/bin/UserService" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/user/pack/resp.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/user/pack/resp.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idl/rpc/user.thrift" beforeDir="false" afterPath="$PROJECT_DIR$/idl/rpc/user.thrift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kitex.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kitex_gen/GoFive/k-user.go" beforeDir="false" afterPath="$PROJECT_DIR$/kitex_gen/GoFive/k-user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kitex_gen/GoFive/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/kitex_gen/GoFive/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,25 +49,6 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
-      <module name="GoFive" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
-      <module name="GoFive" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="DIRECTORY" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
